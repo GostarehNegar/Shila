@@ -136,7 +136,9 @@ function ButtonAppBar(props) {
           {/* </Link> */}
           <div style={{ marginRight: "auto" }}>
             <Link to="">
-              <Button color="white">Home</Button>
+              <Button color="white" onClick={handleDrawerClose}>
+                Home
+              </Button>
             </Link>
           </div>
 
@@ -173,26 +175,26 @@ function ButtonAppBar(props) {
         </div>
         <Divider />
         <List>
-          <Link to={"/"}>
+          <Link to={"/"} onClick={handleDrawerClose}>
             <ListItem>
               <ListItemText className={classes.listItemText}>Home</ListItemText>
             </ListItem>
           </Link>
-          <Link to={"/MissedCalls"}>
+          <Link to={"/MissedCalls"} onClick={handleDrawerClose}>
             <ListItem>
               <ListItemText className={classes.listItemText}>
                 All Missed Calls
               </ListItemText>
             </ListItem>
           </Link>
-          <Link to={"/HangedUps"}>
+          <Link to={"/HangedUps"} onClick={handleDrawerClose}>
             <ListItem>
               <ListItemText className={classes.listItemText}>
                 All Hanged Up Calls
               </ListItemText>
             </ListItem>
           </Link>
-          <Link to={"/ExtensionsReport"}>
+          <Link to={"/ExtensionsReport"} onClick={handleDrawerClose}>
             <ListItem>
               <ListItemText className={classes.listItemText}>
                 Extensions
@@ -200,7 +202,7 @@ function ButtonAppBar(props) {
             </ListItem>
           </Link>
           <Divider />
-          <Link to={"/SignIn"}>
+          <Link to={"/SignIn"} onClick={handleDrawerClose}>
             <ListItem>
               <ListItemText className={classes.listItemText}>
                 Sign In

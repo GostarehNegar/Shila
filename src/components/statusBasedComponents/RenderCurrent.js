@@ -94,7 +94,6 @@ const statusBasedIcons = (status) => {
 
 const RenderCurrent = ({ call }) => {
   const [duration, setDuration] = useState(0);
-  console.log(`uptime ${call}`);
   useEffect(() => {
     if (call.status === "up") {
       setDuration(setInterval(new Date() - call.upTime, 1000));
@@ -103,71 +102,71 @@ const RenderCurrent = ({ call }) => {
       setDuration(0);
     };
   });
-  // if (call == null) {
-  //   return <p>hi</p>;
-  // } else {
-  return (
-    <Grid item xs={12}>
-      <Card style={statusBasedStyling(call.status).card}>
-        <CardActionArea>
-          <CardContent>
-            {statusBasedIcons(call.status)}
-            <StyledTypography gutterBottom variant="h5" component="h2">
-              {call.caller}
-            </StyledTypography>
-            <StyledTypography>
-              {call.status === "up" && ms(duration)}
-              {call.status === "hangUp" && call.callDuration}
-            </StyledTypography>
-            <StyledTypography variant="body2" component="p">
-              {call.fullName}
-            </StyledTypography>
-            <StyledTypography
-              variant="body2"
-              component="p"
-              style={{ color: "lightsteelblue" }}
+  if (call == null) {
+    return <p>hi</p>;
+  } else {
+    return (
+      <Grid item xs={12}>
+        <Card style={statusBasedStyling(call.status).card}>
+          <CardActionArea>
+            <CardContent>
+              {statusBasedIcons(call.status)}
+              <StyledTypography gutterBottom variant="h5" component="h2">
+                {call.caller}
+              </StyledTypography>
+              <StyledTypography>
+                {call.status === "up" && ms(duration)}
+                {call.status === "hangUp" && call.callDuration}
+              </StyledTypography>
+              <StyledTypography variant="body2" component="p">
+                {call.fullName}
+              </StyledTypography>
+              <StyledTypography
+                variant="body2"
+                component="p"
+                style={{ color: "lightsteelblue" }}
+              >
+                {call.status}
+              </StyledTypography>
+              <StyledTypography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+              >
+                {call.called}
+              </StyledTypography>
+              <StyledTypography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+              >
+                {call.payload.direction}
+              </StyledTypography>
+              <StyledTypography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+              >
+                {call.formattedTime}
+              </StyledTypography>
+            </CardContent>
+          </CardActionArea>
+          <StyledCardAction>
+            <StyledButton
+              size="small"
+              color="primary"
+              onClick={() => window.location.replace(`/contact/${call.caller}`)}
             >
-              {call.status}
-            </StyledTypography>
-            <StyledTypography
-              variant="body2"
-              color="textSecondary"
-              component="p"
-            >
-              {call.called}
-            </StyledTypography>
-            <StyledTypography
-              variant="body2"
-              color="textSecondary"
-              component="p"
-            >
-              {call.payload.direction}
-            </StyledTypography>
-            <StyledTypography
-              variant="body2"
-              color="textSecondary"
-              component="p"
-            >
-              {call.formattedTime}
-            </StyledTypography>
-          </CardContent>
-        </CardActionArea>
-        <StyledCardAction>
-          <StyledButton
-            size="small"
-            color="primary"
-            onClick={() => window.location.replace(`/contact/${call.caller}`)}
-          >
-            profile
-          </StyledButton>
-          <OdooButton size="small" color="primary">
-            Odoo
-          </OdooButton>
-        </StyledCardAction>
-      </Card>
-    </Grid>
-  );
+              profile
+            </StyledButton>
+            <OdooButton size="small" color="primary">
+              Odoo
+            </OdooButton>
+          </StyledCardAction>
+        </Card>
+      </Grid>
+    );
+  }
 };
-// };
 
 export default RenderCurrent;

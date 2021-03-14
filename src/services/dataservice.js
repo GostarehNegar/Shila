@@ -56,7 +56,6 @@ class DataServices {
     length = length || 6;
     var calls = getEntities(this.state, "phonecall");
     // debugger;
-    console.error(`call lenght ****** ${calls.length}`);
     return utils
       .from(calls)
       .select((x) => new PhoneCall(x))

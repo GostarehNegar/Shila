@@ -174,7 +174,6 @@ const RenderExtension = ({ extension }) => {
     todaysMissedCallsCount,
     todaysHangedUpCallsCount,
   } = extension;
-  console.log(extension);
   return (
     <Grid item xs={12} sm={2}>
       <StyledCard style={statusBasedStyling(currentCall.status).card}>
