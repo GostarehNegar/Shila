@@ -17,8 +17,8 @@ import ms from "pretty-ms";
 const ringing = {
   card: {
     //borderRight: "16px solid #4ba455",
-    border: "1px solid #blue",
-    boxShadow: "-2px 2px 15px 10px rgba(0,170,255,0.4) ",
+    //border: "1px solid #cyan",
+    boxShadow: "-2px 2px 15px 10px rgba(0, 255, 255	,0.4) ",
     margin: "auto 25%",
     borderRadius: "6px",
   },
@@ -26,8 +26,8 @@ const ringing = {
 const hangup = {
   card: {
     //borderRight: "16px solid teal",
-    border: "1px solid teal",
-    boxShadow: "-2px 2px 5px 4px rgba(0, 128, 128, 0.4) ",
+    //border: "1px solid #5f8285",
+    boxShadow: "0px 0px 10px 6px rgba(95, 130, 133, 0.4) ",
     margin: "auto 25%",
     borderRadius: "6px",
   },
@@ -35,8 +35,8 @@ const hangup = {
 const missed = {
   card: {
     // borderRight: "16px solid #4ba455",
-    border: "1px solid #red",
-    boxShadow: "-2px 2px 15px 10px rgba(255,0,0,0.4) ",
+    //border: "1px solid #e86f6f",
+    boxShadow: "-2px 2px 15px 10px rgba(237, 74, 74 ,0.4) ",
     margin: "auto 25%",
     borderRadius: "6px",
   },
@@ -44,8 +44,8 @@ const missed = {
 const up = {
   card: {
     // borderRight: "16px solid #4ba455",
-    border: "1px solid #green",
-    boxShadow: "-2px 2px 15px 10px rgba(0,255,0,0.4) ",
+    //border: "1px solid lime",
+    boxShadow: "-2px 2px 15px 10px rgba(50, 205, 50 ,0.4) ",
     margin: "auto 25%",
     borderRadius: "6px",
   },
@@ -53,8 +53,8 @@ const up = {
 const ring = {
   card: {
     // borderRight: "16px solid orange",
-    border: "1px solid orange",
-    boxShadow: "-2px 2px 15px 10px rgba(255,120,0,0.4) ",
+    //border: "1px solid yellow",
+    boxShadow: "-2px 2px 15px 10px rgba(183, 157, 235,0.4) ",
     margin: "auto 25%",
     borderRadius: "6px",
   },
@@ -107,7 +107,7 @@ const RenderCurrent = ({ call }) => {
   } else {
     return (
       <Grid item xs={12}>
-        <Card style={statusBasedStyling(call.status).card}>
+        <Card style={statusBasedStyling("ring").card}>
           <CardActionArea>
             <CardContent>
               {statusBasedIcons(call.status)}

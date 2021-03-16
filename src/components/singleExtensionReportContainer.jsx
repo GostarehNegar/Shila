@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import DataServices from "../services/dataservice";
-import singleExtensionReport from "./Pages/singleExtensionReport";
+import SingleExtensionReport from "./Pages/singleExtensionReport";
 
 const mapStateToProps = (state) => {
   var id = window.location.pathname.replace("/extensioncalls/", "");
@@ -19,5 +19,5 @@ const mapDispatchToProps = (dispatch) => ({
 const SingleExtensionReportContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(singleExtensionReport);
+)(SingleExtensionReport);
 export default SingleExtensionReportContainer;
