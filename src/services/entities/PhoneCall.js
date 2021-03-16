@@ -31,6 +31,9 @@ class PhoneCall extends Entity {
     var date = new Date(this.time);
     return date.toLocaleDateString("fa-IR");
   }
+  get numericDate(){
+    return new Date(this.time).getTime()
+  }
   get called() {
     return this.payload.calledId;
   }
@@ -62,7 +65,7 @@ class PhoneCall extends Entity {
     return this.payload.hangupTime;
   }
   get callDuration() {
-    if (this.payload.upTime !== null) {
+    if (this.payload.upTime !== null && this.payload.hangupTime !== null) {
       try {
         var upTime = new Date(this.payload.upTime);
         var hangupTime = new Date(this.payload.hangupTime);
